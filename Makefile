@@ -6,7 +6,7 @@
 #    By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/13 16:31:47 by alejaro2          #+#    #+#              #
-#    Updated: 2025/02/10 15:36:28 by alejaro2         ###   ########.fr        #
+#    Updated: 2025/02/10 16:27:19 by alejaro2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,12 +29,12 @@ OBJS = $(SRC:.c=.o)
 all : $(LIBFT) $(NAME)
 
 
-$(NAME): $(OBJS) $(LIBFT)
+$(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -L$(LIBFT_DIR) -lft -o $(NAME)
 
 
 $(LIBFT):
-	make -C $(LIBFT_DIR)
+	@make -C $(LIBFT_DIR)
 
 clean:
 	$(RM) $(OBJS)
@@ -46,5 +46,6 @@ fclean: clean
 
 re: fclean all
 
+.PHONY: all clean fclean re
 
 
