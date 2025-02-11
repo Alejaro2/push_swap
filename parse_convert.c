@@ -6,7 +6,7 @@
 /*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 13:34:48 by alejaro2          #+#    #+#             */
-/*   Updated: 2025/02/10 15:48:49 by alejaro2         ###   ########.fr       */
+/*   Updated: 2025/02/11 17:42:03 by alejaro2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,16 +98,3 @@ void	duplicate(int *numbers, int count)
 	}
 }
 
-int	is_all_spaces(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] != ' ')
-			return (0);
-		i++;
-	}
-	return (1);
-}

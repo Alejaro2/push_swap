@@ -6,7 +6,7 @@
 /*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:31:30 by alejaro2          #+#    #+#             */
-/*   Updated: 2025/02/10 15:34:48 by alejaro2         ###   ########.fr       */
+/*   Updated: 2025/02/11 19:12:49 by alejaro2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,17 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+
+typedef struct s_node
+{
+	int value;
+	struct s_node *next;
+} t_node;
+
+typedef struct s_stack {
+	t_node *top;
+	int size;
+} t_stack;
 
 
 int is_valid_char(char c, int position);
@@ -37,20 +48,8 @@ int *convert_init(int argc, char **argv, int count);
 void ft_error(char *str, int flag);
 int is_all_spaces(char *str);
 
-
-typedef struct s_node
-{
-	int value;
-	struct s_node *next;
-} t_node;
-
-// struct s_node *prev;
-
-
-typedef struct s_stack {
-	t_node *top;
-	int size;
-} t_stack;
-
+t_node *create_node(int value);
+t_stack *create_stack(void);
+void lstadd(t_stack *stack, int value);
 
 #endif
