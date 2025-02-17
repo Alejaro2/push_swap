@@ -6,7 +6,7 @@
 /*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 15:41:21 by alejaro2          #+#    #+#             */
-/*   Updated: 2025/02/11 17:58:12 by alejaro2         ###   ########.fr       */
+/*   Updated: 2025/02/17 10:12:26 by alejaro2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	is_sorted(int *numbers, int count)
 	}
 	return (1);
 }
+
 int	is_all_spaces(char *str)
 {
 	int	i;
@@ -45,3 +46,4 @@ int	is_all_spaces(char *str)
 	}
 	return (1);
 }
+

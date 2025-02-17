@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   validate.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/17 10:01:50 by alejaro2          #+#    #+#             */
+/*   Updated: 2025/02/17 10:01:54 by alejaro2         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "libft/libft.h"
 #include "push_swap.h"
 
@@ -33,7 +46,7 @@ int	is_valid_char(char c, int position)
 {
 	if (position == 0 && (ft_isdigit(c) || c == ' ' || c == '+' || c == '-'))
 		return (1);
-	else if (ft_isdigit(c) || c == ' ')
+	else if (position > 0 && ft_isdigit(c))
 		return (1);
 	return (0);
 }
@@ -44,10 +57,10 @@ int	process_and_validate(char *arg)
 	int		count;
 
 	if (is_all_spaces(arg) || arg[0] == '\0')
-		ft_error("error", 1);
+		ft_error("Error\n", 1);
 	split = ft_split(arg, ' ');
 	if (!split)
-		ft_error("error", 1);
+		ft_error("Error\n", 1);
 	j = 0;
 	count = 0;
 	while (split[j])
@@ -81,43 +94,19 @@ void	validate(char *split_str)
 	int	i;
 
 	i = 0;
+	while (split_str[i] == ' ')
+		i++;
+
+	if ((split_str[i] == '-' || split_str[i] == '+') && split_str[i + 1] == '\0')
+		ft_error("Error\n", 1);
+
 	while (split_str[i])
 	{
 		if (!is_valid_char(split_str[i], i))
-			ft_error("error", 1);
+			ft_error("Error\n", 1);
 		i++;
 	}
 	if (!valid_limits(split_str))
-		ft_error("error", 1);
+		ft_error("Error\n", 1);
 }
 
-/*int	valid_digits(int argc, char **argv)
-{
-	int		i;
-	int		j;
-	int		count;
-	char	**split;
-
-	i = 1;
-	count = 0;
-	while (i < argc)
-	{
-		if (is_all_spaces(argv[i]))
-			ft_error("error", 1);
-		if (argv[i][0] == '\0')
-			ft_error("error", 1);
-		split = ft_split(argv[i], ' ');
-		if (!split)
-			ft_error("error", 1);
-		j = 0;
-		while (split[j])
-		{
-			validate(split[j]);
-			count++;
-			j++;
-		}
-		ft_free_mem(split);
-		i++;
-	}
-	return (count);
-}*/

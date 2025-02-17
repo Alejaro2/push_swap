@@ -6,7 +6,7 @@
 /*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 13:34:48 by alejaro2          #+#    #+#             */
-/*   Updated: 2025/02/11 17:42:03 by alejaro2         ###   ########.fr       */
+/*   Updated: 2025/02/17 09:16:22 by alejaro2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	*save_mem(int count)
 
 	numbers = malloc(sizeof(int) * count);
 	if (!numbers)
-		ft_error("error", 1);
+		ft_error("Error\n", 1);
 	return (numbers);
 }
 
@@ -64,12 +64,17 @@ int	*convert_init(int argc, char **argv, int count)
 
 	new = 0;
 	numbers = save_mem(count);
+	if(!numbers)
+		return NULL;
 	i = 1;
 	while (i < argc)
 	{
 		split = ft_split(argv[i], ' ');
 		if (!split)
-			ft_error("error", 1);
+		{
+			free(numbers);
+			ft_error("Error\n", 1);
+		}	
 		convert_numbers(split, numbers, &new);
 		i++;
 	}
@@ -90,7 +95,7 @@ void	duplicate(int *numbers, int count)
 			if (numbers[i] == numbers[j])
 			{
 				free(numbers);
-				ft_error("error", 1);
+				ft_error("Error\n", 1);
 			}
 			j++;
 		}
