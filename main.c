@@ -6,7 +6,7 @@
 /*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 15:41:38 by alejaro2          #+#    #+#             */
-/*   Updated: 2025/02/17 11:13:11 by alejaro2         ###   ########.fr       */
+/*   Updated: 2025/02/18 11:07:24 by alejaro2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int	main(int argc, char **argv)
 			current = current->next;
 		}
 		free(numbers);
+		free_stack(stack_a);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 10:01:42 by alejaro2          #+#    #+#             */
-/*   Updated: 2025/02/17 12:24:38 by alejaro2         ###   ########.fr       */
+/*   Updated: 2025/02/18 11:05:19 by alejaro2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ t_stack *create_stack(void)
 	t_stack *stack = malloc(sizeof(t_stack));
 	if (!stack)
 		return(NULL);
+		
 	stack->top = NULL;
 	stack->size = 0;
 	return stack;
@@ -51,4 +52,17 @@ void lstadd(t_stack *stack, int value)
 		temp->next = new_node;
 	}
 	stack->size++;
+}
+
+void free_stack(t_stack *stack)
+{
+	t_node *temp;
+
+	while (stack->top)
+	{
+		temp = stack->top;
+		stack->top = stack->top->next;
+		free(temp);
+	}
+	free(stack);
 }
