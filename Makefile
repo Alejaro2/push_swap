@@ -6,7 +6,7 @@
 #    By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/13 16:31:47 by alejaro2          #+#    #+#              #
-#    Updated: 2025/02/11 19:33:09 by alejaro2         ###   ########.fr        #
+#    Updated: 2025/02/20 11:54:40 by alejaro2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ LIBFT = $(LIBFT_DIR)/libft.a
 
 RM = rm -f
 
-SRC = main.c parse_convert.c parse.c validate.c utils.c
+SRC = main.c parse_convert.c parse.c validate.c utils.c swap.c sort_three.c
 
 OBJS = $(SRC:.c=.o)
 

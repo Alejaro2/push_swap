@@ -6,7 +6,7 @@
 /*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 15:41:38 by alejaro2          #+#    #+#             */
-/*   Updated: 2025/02/18 11:07:24 by alejaro2         ###   ########.fr       */
+/*   Updated: 2025/02/20 13:07:37 by alejaro2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 	int	*numbers;
 	int	i;
 	t_stack *stack_a;
-
+	
 	if (argc >= 2)
 	{
 		count = valid_digits(argc, argv);
@@ -29,7 +29,7 @@ int	main(int argc, char **argv)
 		{
 			free(numbers);
 			return(0);
-		}
+        }
 
 		stack_a = create_stack();
 		if(!stack_a)
@@ -45,9 +45,20 @@ int	main(int argc, char **argv)
 		t_node *current = stack_a->top;
 		while (current)
 		{
+			printf("%d principio\n", current->value);
+			current = current->next;
+		}
+
+		sort_three(stack_a);
+
+		current = stack_a->top;
+
+		while(current)
+		{
 			printf("%d\n", current->value);
 			current = current->next;
 		}
+
 		free(numbers);
 		free_stack(stack_a);
 	}
