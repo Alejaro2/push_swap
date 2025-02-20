@@ -6,7 +6,7 @@
 /*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 10:16:25 by alejaro2          #+#    #+#             */
-/*   Updated: 2025/02/20 11:53:17 by alejaro2         ###   ########.fr       */
+/*   Updated: 2025/02/20 17:21:56 by alejaro2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ void sort_three(t_stack *a)
     second = a->top->next;
     third = a->top->next->next;
     
-    if(first->value > second->value && first->value < third->value && second->value < third->value)
+    if (first->value > second->value)
+        sa(a);
+    else if(first->value > second->value && first->value < third->value && second->value < third->value)
         sa(a);
     else if(first->value > second->value && first->value > third->value && second->value < third->value)
         ra(a);
@@ -38,5 +40,4 @@ void sort_three(t_stack *a)
         ra(a);
         sa(a);
     }
-    
 }
