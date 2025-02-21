@@ -6,7 +6,7 @@
 /*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:31:30 by alejaro2          #+#    #+#             */
-/*   Updated: 2025/02/20 11:53:28 by alejaro2         ###   ########.fr       */
+/*   Updated: 2025/02/21 12:37:19 by alejaro2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,14 @@ int is_sorted(int *numbers, int count);
 void ft_free_mem(char **array);
 int *save_mem(int count);
 void free_stack(t_stack *stack);
+void print_stack(t_stack *stack);
+
 void sa(t_stack *stack);
 void rra(t_stack *stack);
 void ra(t_stack *stack);
 void push(t_stack *from, t_stack *to);
 void sort_three(t_stack *a);
+void sort_five(t_stack *a, t_stack *b);
 
 void convert_numbers(char **split, int *numbers, int *new);
 int *convert_init(int argc, char **argv, int count);

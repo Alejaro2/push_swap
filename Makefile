@@ -6,7 +6,7 @@
 #    By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/13 16:31:47 by alejaro2          #+#    #+#              #
-#    Updated: 2025/02/20 11:54:40 by alejaro2         ###   ########.fr        #
+#    Updated: 2025/02/21 12:52:47 by alejaro2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,14 +15,14 @@ NAME = push_swap
 
 CC = cc 
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g3
 
 LIBFT_DIR =libft 
 LIBFT = $(LIBFT_DIR)/libft.a 
 
 RM = rm -f
 
-SRC = main.c parse_convert.c parse.c validate.c utils.c swap.c sort_three.c
+SRC = main.c parse_convert.c parse.c validate.c utils.c swap.c sort_three.c sort_five.c 
 
 OBJS = $(SRC:.c=.o)
 

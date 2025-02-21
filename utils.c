@@ -6,7 +6,7 @@
 /*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 10:01:42 by alejaro2          #+#    #+#             */
-/*   Updated: 2025/02/18 11:05:19 by alejaro2         ###   ########.fr       */
+/*   Updated: 2025/02/21 12:23:36 by alejaro2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ t_stack *create_stack(void)
 	stack->top = NULL;
 	stack->size = 0;
 	return stack;
-	
 }
 
 void lstadd(t_stack *stack, int value)
@@ -65,4 +64,15 @@ void free_stack(t_stack *stack)
 		free(temp);
 	}
 	free(stack);
+}
+void print_stack(t_stack *stack)
+{
+	t_node *current;
+	
+	current = stack->top;
+	while(current)
+	{
+		printf("%d\n", current->value);
+		current = current->next;
+	}
 }
