@@ -6,7 +6,7 @@
 /*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:31:30 by alejaro2          #+#    #+#             */
-/*   Updated: 2025/02/21 12:37:19 by alejaro2         ###   ########.fr       */
+/*   Updated: 2025/02/21 17:53:19 by alejaro2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ void ra(t_stack *stack);
 void push(t_stack *from, t_stack *to);
 void sort_three(t_stack *a);
 void sort_five(t_stack *a, t_stack *b);
+void pb(t_stack *a, t_stack *b);
+void pa(t_stack *a, t_stack *b);
 
 void convert_numbers(char **split, int *numbers, int *new);
 int *convert_init(int argc, char **argv, int count);
