@@ -6,7 +6,7 @@
 /*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 17:08:13 by alejaro2          #+#    #+#             */
-/*   Updated: 2025/02/21 17:51:49 by alejaro2         ###   ########.fr       */
+/*   Updated: 2025/02/21 19:41:55 by alejaro2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,11 @@ void sort_five(t_stack *a, t_stack *b)
 			else
 				rra(a);
 		}
-		push(a, b);
-		a->size--;
-		b->size++;
+		pb(a, b);
 		i++;
 	}
 	sort_three(a);
-	pb(a, b);
-	pb(a, b);
-	a ->size += 2;
+	pa(a, b);
+	pa(a, b);
 }
 
