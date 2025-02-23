@@ -6,11 +6,33 @@
 /*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 12:29:05 by alejaro2          #+#    #+#             */
-/*   Updated: 2025/02/23 13:15:48 by alejaro2         ###   ########.fr       */
+/*   Updated: 2025/02/23 20:25:10 by alejaro2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void assign_s_index(t_stack *a)
+{
+    t_node *current;
+    t_node *compare;
+    int index;
+    
+    index = 0;
+    
+    current = a->top;
+    while(current)
+    {
+        compare = a->top;
+        while(compare)
+        {
+            if(compare->value < current->value)
+                index++;
+            compare = compare->next;
+        }
+    }
+    
+}
 
 void move_to_b(t_stack *a, t_stack *b, int min, int max)
 {

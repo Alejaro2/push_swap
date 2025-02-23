@@ -6,7 +6,7 @@
 /*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:31:30 by alejaro2          #+#    #+#             */
-/*   Updated: 2025/02/23 13:20:10 by alejaro2         ###   ########.fr       */
+/*   Updated: 2025/02/23 18:11:37 by alejaro2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 typedef struct s_node
 {
 	int value;
+	int s_index;
 	struct s_node *next;
 } t_node;
 
