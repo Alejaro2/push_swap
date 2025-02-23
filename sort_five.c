@@ -6,11 +6,28 @@
 /*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 17:08:13 by alejaro2          #+#    #+#             */
-/*   Updated: 2025/02/21 19:41:55 by alejaro2         ###   ########.fr       */
+/*   Updated: 2025/02/23 13:03:48 by alejaro2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int find_max(t_stack *b)
+{
+	t_node *current;
+	int max;
+
+	current = b->top;
+	max = current->value;
+	while(current)
+	{
+		if(current->value > max)
+			max = current->value;
+		current = current->next;
+	}
+	return(max);
+}
+
 
 int find_min(t_stack *a)
 {

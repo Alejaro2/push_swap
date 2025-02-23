@@ -6,7 +6,7 @@
 /*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 15:41:38 by alejaro2          #+#    #+#             */
-/*   Updated: 2025/02/22 12:10:34 by alejaro2         ###   ########.fr       */
+/*   Updated: 2025/02/23 12:27:20 by alejaro2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,16 @@ void sort_stack(t_stack *a, int count)
 		if(!b)
 			return;
 		sort_five(a, b);
+		free_stack(b);
+	}
+	else
+	{
+		b = create_stack();
+		if(!b)
+			return;
+		k_sort1(a, b, count);
+		sort_five(a, b);
+		k_sort2(a, b);
 		free_stack(b);
 	}
 }
