@@ -6,7 +6,7 @@
 /*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 15:41:38 by alejaro2          #+#    #+#             */
-/*   Updated: 2025/02/24 13:33:06 by alejaro2         ###   ########.fr       */
+/*   Updated: 2025/02/24 16:12:59 by alejaro2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void check_and_sort(int *numbers, int count)
 		return;
 	}
 	sort_stack(stack_a, count);
-	print_stack(stack_a);
+	/* print_stack(stack_a); */
 	free(numbers);
 	free_stack(stack_a);
 }

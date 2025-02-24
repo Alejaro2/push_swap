@@ -6,7 +6,7 @@
 /*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:31:30 by alejaro2          #+#    #+#             */
-/*   Updated: 2025/02/24 13:36:13 by alejaro2         ###   ########.fr       */
+/*   Updated: 2025/02/24 16:04:23 by alejaro2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,24 @@ void free_stack(t_stack *stack);
 void print_stack(t_stack *stack);
 
 void sa(t_stack *stack);
-void rra(t_stack *stack);
+void sb(t_stack *stack_b);
+void ss(t_stack *a, t_stack *b);
 void ra(t_stack *stack);
+void rb(t_stack *b);
+void rr(t_stack *a, t_stack *b);
+void rra(t_stack *stack);
+void rrb(t_stack *b);
+void rrr(t_stack *a, t_stack *b);
 void push(t_stack *from, t_stack *to);
-void sort_three(t_stack *a);
-void sort_five(t_stack *a, t_stack *b);
 void pb(t_stack *a, t_stack *b);
 void pa(t_stack *a, t_stack *b);
+
+
+void sort_three(t_stack *a);
+void sort_five(t_stack *a, t_stack *b);
+
 void rrb(t_stack *b);
-void rb(t_stack *b);
+
 
 void convert_numbers(char **split, int *numbers, int *new);
 int *convert_init(int argc, char **argv, int count);
