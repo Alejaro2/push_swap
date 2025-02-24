@@ -6,7 +6,7 @@
 /*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 17:26:25 by alejaro2          #+#    #+#             */
-/*   Updated: 2025/02/21 17:27:42 by alejaro2         ###   ########.fr       */
+/*   Updated: 2025/02/24 13:49:27 by alejaro2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void push(t_stack *from, t_stack *to)
     
     temp->next = to->top;
     to->top = temp;
+    
 }
 void pa(t_stack *a, t_stack *b)
 {
@@ -30,6 +31,8 @@ void pa(t_stack *a, t_stack *b)
     push(b, a);
     b->size--;
     a->size++;
+
+    write(1, "pa\n", 3);
 }
 
 void pb(t_stack *a, t_stack *b)
@@ -39,4 +42,6 @@ void pb(t_stack *a, t_stack *b)
     push(a, b);
     a->size--;
     b->size++;
+
+     write(1, "pb\n", 3);
 }

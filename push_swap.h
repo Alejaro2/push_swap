@@ -6,7 +6,7 @@
 /*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 16:31:30 by alejaro2          #+#    #+#             */
-/*   Updated: 2025/02/23 18:11:37 by alejaro2         ###   ########.fr       */
+/*   Updated: 2025/02/24 13:36:13 by alejaro2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,9 @@ void lstadd(t_stack *stack, int value);
 
 int find_max(t_stack *b);
 int find_min(t_stack *a);
-void k_sort1(t_stack *a, t_stack *b, int count);
-void k_sort2(t_stack *a, t_stack *b);
-
+void	ft_bubblesort(int *array, int size);
+int	ft_index(int n, int *array, int size);
+void k_sort2(t_stack *stack_a, t_stack *stack_b, int length);
+void k_sort1(t_stack *stack_a, t_stack *stack_b, int length);
+int ft_sqrt(int num);
 #endif

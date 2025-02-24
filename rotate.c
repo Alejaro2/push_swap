@@ -6,7 +6,7 @@
 /*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 17:23:27 by alejaro2          #+#    #+#             */
-/*   Updated: 2025/02/23 13:09:02 by alejaro2         ###   ########.fr       */
+/*   Updated: 2025/02/24 13:50:17 by alejaro2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void rra(t_stack *stack)
 	prev->next = NULL;
 	last->next = stack->top;
 	stack->top = last;
+
+	 write(1, "rra\n", 4);
 }
 
 void ra(t_stack *stack)
@@ -48,6 +50,8 @@ void ra(t_stack *stack)
 	stack->top = first->next;
 	last->next = first;
 	first->next = NULL;
+
+	 write(1, "ra\n", 3);
 }
 
 void rb(t_stack *b)
@@ -67,6 +71,8 @@ void rb(t_stack *b)
 	b->top = first->next;
 	last->next = first;
 	first->next = NULL;
+
+	 write(1, "rb\n", 3);
 }
 
 void rrb(t_stack *b)
@@ -89,4 +95,6 @@ void rrb(t_stack *b)
 	prev->next = NULL;
 	last->next = b->top;
 	b->top = last;
+
+	 write(1, "rrb\n", 4);
 }

@@ -6,7 +6,7 @@
 /*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 15:41:38 by alejaro2          #+#    #+#             */
-/*   Updated: 2025/02/23 12:27:20 by alejaro2         ###   ########.fr       */
+/*   Updated: 2025/02/24 13:33:06 by alejaro2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,21 @@ static void init_stack_values(t_stack *stack, int *numbers, int count)
 t_stack *process_stack(int *numbers, int count)
 {
 	t_stack *stack_a;
+	t_node *current;
 	
 	stack_a = create_stack();
 	if(!stack_a)
 		return(NULL);
 	init_stack_values(stack_a, numbers, count);
+	ft_bubblesort(numbers, count);
+	
+	current = stack_a->top;
+	while(current)
+	{
+		current->s_index = ft_index(current->value, numbers, count);
+		current = current->next;
+	}
+	
 	return(stack_a);
 }
 void sort_stack(t_stack *a, int count)
@@ -50,11 +60,10 @@ void sort_stack(t_stack *a, int count)
 	else
 	{
 		b = create_stack();
-		if(!b)
+		if (!b)
 			return;
 		k_sort1(a, b, count);
-		sort_five(a, b);
-		k_sort2(a, b);
+		k_sort2(a, b, count);
 		free_stack(b);
 	}
 }
