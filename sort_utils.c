@@ -5,56 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: alejaro2 <alejaro2@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/24 12:23:15 by alejaro2          #+#    #+#             */
-/*   Updated: 2025/02/24 13:32:00 by alejaro2         ###   ########.fr       */
+/*   Created: 2025/02/25 15:50:50 by alejaro2          #+#    #+#             */
+/*   Updated: 2025/02/26 14:33:27 by alejaro2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_sqrt(int num)
+void del_node(t_stack *stack, int *value, int *index)
 {
-	int i = 0;
-
-	while (i * i <= num)
-		i++;
-	return (i - 1);
-}
-
-int	ft_index(int n, int *array, int size)
-{
-	int	i;
-
-	i = 0;
-	while (i < size)
+	t_node *first;
+	
+	if(!stack || !stack->top)
 	{
-		if(array[i] == n)
-			return(i);
-		i++;
+		*value = 0;
+		*index = 0;
+		return;
 	}
-	return (-1);
-}
-
-void	ft_bubblesort(int *array, int size)
-{
-	int	i;
-	int	j;
-	int	temp;
-
-	i = 0;
-	while (i < size - 1)
-	{
-		j = 0;
-		while (j < size - i - 1)
-		{
-			if (array[j] > array[j + 1])
-			{
-				temp = array[j];
-				array[j] = array[j + 1];
-				array[j + 1] = temp;
-			}
-			j++;
-		}
-		i++;
-	}
+	
+	first = stack->top;
+	*value = first->value;
+	*index = first->s_index;
+	stack->top = first->next;
+	free(first);
+	stack->size--;
 }
